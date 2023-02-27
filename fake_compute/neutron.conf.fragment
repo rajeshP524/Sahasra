@@ -1,0 +1,2 @@
+[DEFAULT]
+host=%(container_ip)s

@@ -1,0 +1,92 @@
+# INFO: OSP requires the Advanced Virtualization module
+# ACTION: dnf -y module disable virt:rhel
+# ACTION: dnf -y module enable virt:av
+# ACTION: dnf -y module disable container-tools:rhel8
+# ACTION: dnf -y module enable container-tools:3.0
+# end substitution #
+#
+# RHEL 8.4 EUS
+#
+[rhosp-rhel-8.4-baseos]
+name=rhel8 baseos
+baseurl=http://rhsm-pulp.corp.redhat.com/content/eus/rhel8/8.4/$basearch/baseos/os/
+enabled=1
+gpgcheck=0
+
+[rhosp-rhel-8.4-baseos-debuginfo]
+name=rhel8 baseos debuginfo
+baseurl=http://rhsm-pulp.corp.redhat.com/content/eus/rhel8/8.4/$basearch/baseos/debug/
+enabled=0
+gpgcheck=0
+
+[rhosp-rhel-8.4-appstream]
+name=rhel8 appstream
+baseurl=http://rhsm-pulp.corp.redhat.com/content/eus/rhel8/8.4/$basearch/appstream/os/
+enabled=1
+gpgcheck=0
+
+[rhosp-rhel-8.4-appstream-debuginfo]
+name=rhel8 appstream debuginfo
+baseurl=http://rhsm-pulp.corp.redhat.com/content/eus/rhel8/8.4/$basearch/appstream/debug/
+enabled=0
+gpgcheck=0
+
+[rhosp-rhel-8.4-ha]
+name=Red Hat Enterprise Linux $releasever - $basearch - HA
+baseurl=http://rhsm-pulp.corp.redhat.com/content/eus/rhel8/8.4/$basearch/highavailability/os/
+enabled=1
+gpgcheck=0
+
+[rhosp-rhel-8.4-ha-debuginfo]
+name=Red Hat Enterprise Linux $releasever - $basearch - HA - debuginfo
+baseurl=http://rhsm-pulp.corp.redhat.com/content/eus/rhel8/8.4/$basearch/highavailability/debug/
+enabled=0
+gpgcheck=0
+
+[rhosp-rhel-8.4-av]
+name=Red Hat Enterprise Linux Advanced Virtualization $releasever - $basearch
+baseurl=http://rhsm-pulp.corp.redhat.com/content/eus/rhel8/8.4/$basearch/advanced-virt/os/
+enabled=1
+gpgcheck=0
+
+[rhosp-rhel-8.4-av-debuginfo]
+name=Red Hat Enterprise Linux Advanced Virtualization $releasever - $basearch - debuginfo
+baseurl=http://rhsm-pulp.corp.redhat.com/content/dist/layered/rhel8/$basearch/advanced-virt/debug/
+enabled=0
+gpgcheck=0
+
+[rhosp-rhel-8.4-fdp]
+name=Red Hat Enterprise Linux Fast Datapath $releasever - $basearch
+baseurl=http://rhsm-pulp.corp.redhat.com/content/dist/layered/rhel8/$basearch/fast-datapath/os/
+enabled=1
+gpgcheck=0
+
+[rhelosp-fdp-pending]
+name=Red Hat Enterprise Linux Fast Datapath $releasever - $basearch Nightly
+baseurl=http://download.devel.redhat.com/composes/nightly/rhel-8/FDP/latest-FDP-8-RHEL-8/compose/Server/$basearch/os/
+enabled=0
+gpgcheck=0
+
+# Content for rebuilding RHEL - should not be required;
+# enable only for debugging repoclosure / dnf install issues
+[rhosp-rhel-8.4-crb]
+name=Red Hat Enterprise Linux $releasever - $basearch - CRB
+baseurl=http://rhsm-pulp.corp.redhat.com/content/eus/rhel8/8.4/$basearch/codeready-builder/os/
+enabled=0
+gpgcheck=0
+
+[rhosp-rhel-8.4-crb-debuginfo]
+name=Red Hat Enterprise Linux $releasever - $basearch - CRB - Debuginfo
+baseurl=http://rhsm-pulp.corp.redhat.com/content/eus/rhel8/8.4/$basearch/codeready-builder/debug/
+enabled=0
+gpgcheck=0
+
+# RHEL 8.4 override repo
+[rhosp-rhel-8.4-image-build-override]
+name=RHEL 8.4 Override
+baseurl=http://download.devel.redhat.com/rcm-guest/puddles/OpenStack/RHEL-8.4-image-build-override/latest/$basearch
+enabled=1
+gpgcheck=0
+skip_if_unavailable=1
+module_hotfixes=1
+priority=20

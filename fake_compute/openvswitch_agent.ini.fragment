@@ -1,0 +1,6 @@
+[ovs]
+resource_provider_default_hypervisor=%(container_ip)s
+local_ip=%(container_ip)s
+
+[securitygroup]
+firewall_driver=noop

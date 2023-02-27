@@ -1,0 +1,26 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+# START_HOST_ENTRIES_FOR_STACK: overcloud
+172.17.3.101 compute1029utrtp-0.storage.redhat.local compute1029utrtp-0.storage
+182.17.0.19 compute1029utrtp-0.internalapi.redhat.local compute1029utrtp-0.internalapi
+172.17.2.106 compute1029utrtp-0.tenant.redhat.local compute1029utrtp-0.tenant
+192.168.24.13 compute1029utrtp-0.ctlplane.redhat.local compute1029utrtp-0.ctlplane
+182.17.1.16 compute1029utrtp-1.redhat.local compute1029utrtp-1
+172.17.3.144 compute1029utrtp-1.storage.redhat.local compute1029utrtp-1.storage
+182.17.1.16 compute1029utrtp-1.internalapi.redhat.local compute1029utrtp-1.internalapi
+172.17.2.127 compute1029utrtp-1.tenant.redhat.local compute1029utrtp-1.tenant
+192.168.24.101 compute1029utrtp-1.ctlplane.redhat.local compute1029utrtp-1.ctlplane
+182.17.1.233 controller-0.redhat.local controller-0
+172.17.3.13 controller-0.storage.redhat.local controller-0.storage
+172.17.4.19 controller-0.storagemgmt.redhat.local controller-0.storagemgmt
+182.17.1.233 controller-0.internalapi.redhat.local controller-0.internalapi
+172.17.2.62 controller-0.tenant.redhat.local controller-0.tenant
+172.18.0.121 controller-0.external.redhat.local controller-0.external
+192.168.24.104 controller-0.ctlplane.redhat.local controller-0.ctlplane
+
+192.168.24.1 undercloud.ctlplane.redhat.local undercloud.ctlplane
+192.168.24.46  overcloud.ctlplane.localdomain
+172.17.3.28  overcloud.storage.localdomain
+172.17.4.58  overcloud.storagemgmt.localdomain
+182.17.3.175  overcloud.internalapi.localdomain
+172.18.0.54  overcloud.localdomain

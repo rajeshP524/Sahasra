@@ -1,0 +1,70 @@
+[rhelosp-16.2]
+name=RHOS-16.2
+# puddle_baseurl=http://download.devel.redhat.com/rcm-guest/puddles/OpenStack/16.2-RHEL-8/RHOS-16.2-RHEL-8-20221201.n.1/compose/OpenStack/$basearch/os
+baseurl=http://download.devel.redhat.com/rcm-guest/puddles/OpenStack/16.2-RHEL-8/RHOS-16.2-RHEL-8-20221201.n.1/compose/OpenStack/$basearch/os
+gpgcheck=0
+enabled=1
+
+[rhelosp-16.2-debuginfo]
+name=RHOS-16.2 Debuginfo
+baseurl=http://download.devel.redhat.com/rcm-guest/puddles/OpenStack/16.2-RHEL-8/RHOS-16.2-RHEL-8-20221201.n.1/compose/OpenStack/$basearch/debug/tree
+gpgcheck=0
+enabled=0
+skip_if_unavailable=1
+
+[rhelosp-16.2-sources]
+name=RHOS-16.2 Sources
+baseurl=http://download.devel.redhat.com/rcm-guest/puddles/OpenStack/16.2-RHEL-8/RHOS-16.2-RHEL-8-20221201.n.1/compose/OpenStack/source/tree
+gpgcheck=0
+enabled=0
+skip_if_unavailable=1
+
+[rhelosp-16.2-deployment-tools]
+name=RHOS-16.2 deployment tools
+# puddle_baseurl=http://download.devel.redhat.com/rcm-guest/puddles/OpenStack/16.2-RHEL-8/RHOS-16.2-RHEL-8-20221201.n.1/compose/DeploymentTools/$basearch/os
+baseurl=http://download.devel.redhat.com/rcm-guest/puddles/OpenStack/16.2-RHEL-8/RHOS-16.2-RHEL-8-20221201.n.1/compose/DeploymentTools/$basearch/os
+gpgcheck=0
+enabled=0
+
+[rhosp-ansible-2.9]
+name=Red Hat Enterprise Linux Ansible $releasever - $basearch
+baseurl=http://rhsm-pulp.corp.redhat.com/content/dist/layered/rhel8/$basearch/ansible/2.9/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+
+# end substitution #
+# Optools will be in base.
+
+# OSP 16 override repo
+[rhelosp-16.2-image-build-override]
+name=RHOS 16.2 Override
+# Same for trunk and not-trunk
+baseurl=http://download.devel.redhat.com/rcm-guest/puddles/OpenStack/rhosp-16.2-image-build-override/latest/$basearch/
+enabled=1
+gpgcheck=0
+skip_if_unavailable=1
+module_hotfixes=1
+priority=20
+
+#
+# Development builds (brew)
+#
+[rhelosp-16.2-brew]
+name=RHOS-16.2-brew
+baseurl=http://download.devel.redhat.com/brewroot/repos/rhos-16.2-rhel-8-candidate/latest/$basearch/
+gpgcheck=0
+enabled=0
+
+# unit test dependencies that are not in base RHEL OSP
+# All are kept in the candidate tag; ET should separate things for us
+[rhelosp-16.2-unittest]
+name=RHOS-16.2-trunk Unit Test Dependency
+baseurl=http://download.devel.redhat.com/brewroot/repos/rhos-16.2-rhel-8-testdeps/latest/$basearch/
+enabled=0
+skip_if_unavailable=1
+gpgcheck=0
+
+#
+# Other dependencies
+#

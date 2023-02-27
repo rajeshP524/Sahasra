@@ -1,0 +1,8 @@
+[DEFAULT]
+compute_driver=fake.FakeDriver
+my_ip=%(container_ip)s
+host=%(container_ip)s
+
+[vnc]
+server_listen=%(container_ip)s
+server_proxyclient_address=%(container_ip)s
