@@ -31,5 +31,5 @@ ovs-vswitchd unix:/var/run/openvswitch/db.sock -vconsole:emer -vsyslog:err -vfil
 # TODO: ip address on the bridge?
 ovs-vsctl -t 10 -- --may-exist add-br br-ex -- set bridge br-ex other-config:hwaddr=${MY_MACADDR} -- set bridge br-ex fail_mode=standalone -- del-controller br-ex
 
-$(command -v python3 || command -v python) -m neutron.cmd.destroy_patch_ports --config-file /usr/share/neutron/neutron-dist.conf --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/openvswitch_agent.ini --config-dir /etc/neutron/conf.d/common --config-dir /etc/neutron/conf.d/neutron-openvswitch-agent
-/usr/bin/neutron-openvswitch-agent --config-file /usr/share/neutron/neutron-dist.conf --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/openvswitch_agent.ini --config-dir /etc/neutron/conf.d/common --log-file=/var/log/neutron/openvswitch-agent.log
+$(command -v python3 || command -v python) -m neutron.cmd.destroy_patch_ports --config-file /usr/share/neutron/neutron-dist.conf --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/openvswitch_agent.ini --config-dir /etc/neutron/conf.d/common --config-dir /etc/neutron/conf.d/neutron-openvswitch-agent &
+/usr/bin/neutron-openvswitch-agent --config-file /usr/share/neutron/neutron-dist.conf --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/openvswitch_agent.ini --config-dir /etc/neutron/conf.d/common --log-file=/var/log/neutron/openvswitch-agent.log &
